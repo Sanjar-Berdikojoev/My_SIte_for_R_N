@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/reset.css' %}"/>
+    <link rel="stylesheet" href="{%static 'css/style.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+            <div class="header__top">
+            <a href="#" class="logo">News</a>
+            <nav class="navbar">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Sport</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Culture</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Technology</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Music</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+        <div class="header__bottom">
+            <h1 class="header__title">It is news site</h1>
+            <p class="header__desc">some description</p>
+        </div>
+        </div>
+        
+    </header>
+<section class="posts">
+<div class="container">
+    {% for i in post %}
+        <div class="post__wrapper">
+            <img src="{{ì.image.url}}" alt="" class="post__img" width="200" height="200">
+            <h3 class="post__title">{{i.title}}</h3>
+            <p class="post__date">{{i.created_date}}</p>
+        </div>
+    {% endfor %}</div>
+</section>
+</body>
+</html>
